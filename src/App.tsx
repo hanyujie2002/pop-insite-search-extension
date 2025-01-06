@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 
 function App() {
   const [query, setQuery] = useState('');
@@ -39,21 +38,26 @@ function App() {
     }
   })
 
-  return (
-    <div style={{ padding: '10px', width: '300px' }}>
-      <input
-        type="text"
-        value={query}
-        autoFocus
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Enter search query"
-        style={{ width: '100%', padding: '5px' }}
-      />
-      <button onClick={handleSearch} style={{ padding: '5px 10px', marginTop: '10px' }}>
-        Search
-      </button>
-    </div>
-  );
+return (
+  <div className="p-4 w-72">
+    <p className="ml-1 text-sm text-gray-500 mb-2">In site search with Google</p>
+    <input
+      type="text"
+      value={query}
+      autoFocus
+      onChange={(e) => setQuery(e.target.value)}
+      placeholder="Enter search query"
+      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
+    />
+    <button 
+      onClick={handleSearch} 
+      className="w-full mt-3 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring"
+    >
+      Search
+    </button>
+  </div>
+);
+
 }
 
 export default App;
